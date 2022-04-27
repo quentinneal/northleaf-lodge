@@ -1,0 +1,101 @@
+.activeSlider {
+    opacity: 1;
+    z-index: 1;
+    transition: opacity .3s ease-in-out;
+}
+
+.inactiveSlider {
+    opacity: 0;
+    transition: opacity 0s ease-in-out .3s;
+}
+
+.sliderImage1 {
+    background-image: url(../../assets/imageone.jpg);
+}
+
+.sliderImage2 {
+    background-image: url(../../assets/imagetwo.jpg);
+}
+
+.sliderImage3 {
+    background-image: url(../../assets/imagethree.jpg);
+}
+
+.sliderImage4 {
+    background-image: url(../../assets/imagefour.jpg);
+}
+
+.sliderImage5 {
+    background-image: url(../../assets/imagefive.jpg);
+}
+
+.slider-image {
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+
+    .slider-content {
+        width: 100%;
+        height: 24rem;
+        background-color: rgba(18, 18, 18, .9);
+        align-self: end;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: rgba(237, 237, 237, 1);
+        transition: background-color .2s ease;
+
+        &:hover {
+            background-color: rgba(18, 18, 18, 1);
+        }
+    }
+
+    .slider-heading {
+        margin: 0 6rem;
+    }
+
+    .slider-title {
+        font-size: 4.8rem;
+        font-weight: 500;
+    }
+
+    .slider-title-text-green {
+        color: rgba(0, 255, 0, 1);
+    }
+
+    .slider-description {
+        font-size: 1.8rem;
+        font-weight: 300;
+    }
+
+    .slider-button {
+        text-decoration: none;
+        display: block;
+        margin: 0 6rem;
+        border: 1px solid rgba(0, 255, 0, 1);
+        border-radius: 3.6rem;
+        padding: 1.8rem 3.6rem;
+        transition: background-color .2s ease;
+
+        .slider-button-text {
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: rgba(237, 237, 237, 1);
+            transition: color .2s ease;
+        }
+
+        &:hover {
+            background-color: rgba(0, 255, 0, 1);
+            cursor: pointer;
+
+            .slider-button-text {
+                color: rgba(18, 18, 18, 1);
+            }
+        }
+    }
+}

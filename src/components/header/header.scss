@@ -1,0 +1,64 @@
+.header {
+    height: 7.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    position: fixed;
+    z-index: 3;
+    width: 100%;
+    background-color: rgba(18, 18, 18, 1);
+    color: rgba(237, 237, 237, 1);
+
+    &.sticky {
+        position: sticky;
+        top: 0;
+    }
+
+    .header-logo {
+        display: flex;
+        margin: 0 3rem;
+        text-decoration: none;
+    }
+
+    .header-logo-text {
+        color: rgba(0, 255, 0, 1);
+        font-size: 3rem;
+
+        &::first-letter {
+            color: rgba(237, 237, 237, 1);
+        }
+    }
+
+    .header-logo-text-leaf {
+        width: 1.8rem;
+        fill: rgba(0, 255, 0, 1);
+        transform: translate(-0.9rem, -1.6rem)
+    }
+
+    .header-button {
+        text-decoration: none;
+        display: block;
+        margin: 0 3rem;
+        border: 1px solid rgba(0, 255, 0, 1);
+        border-radius: 3.6rem;
+        padding: 0.9rem 1.8rem;
+        transition: background-color .2s ease;
+
+        &:hover {
+            background-color: rgba(0, 255, 0, 1);
+            cursor: pointer;
+
+            .header-button-text {
+                color: rgba(18, 18, 18, 1);
+            }
+        }
+    }
+
+    .header-button-text {
+        transition: color .2s ease;
+        font-size: 1.3rem;
+        font-weight: 500;
+        color: rgba(237, 237, 237, 1);
+    }
+}

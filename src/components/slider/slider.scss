@@ -1,0 +1,70 @@
+.slider {
+    overflow: hidden;
+    display: grid;
+    position: relative;
+    width: 100%; //500%
+    overflow-x: hidden;
+    background-color: black;
+
+    .slider-arrows {
+        display: flex;
+        position: absolute;
+        //top: -7.2rem;
+        //right: 0;
+        bottom: 24rem;
+        right: 0%;
+        z-index: 2;
+    }
+
+    .slider-left-arrow {
+        all: unset;
+        aspect-ratio: 1 / 1;
+        width: 7.2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 255, 0, 1);
+        transition: background-color .2s ease;
+
+        .slider-left-icon {
+            width: 1.8rem;
+            fill: rgba(18, 18, 18, 1);
+            transition: fill .2s ease;
+        }
+
+        &:hover {
+            background-color: rgba(18, 18, 18, 1);
+            cursor: pointer;
+
+            .slider-left-icon {
+                fill: rgba(0, 255, 0, 1);
+            }
+        }
+    }
+
+    .slider-right-arrow {
+        all: unset;
+        aspect-ratio: 1 / 1;
+        width: 7.2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 255, 0, 1);
+        transition: background-color .2s ease;
+
+        .slider-right-icon {
+            width: 1.8rem;
+            fill: rgba(18, 18, 18, 1);
+            transition: fill .2s ease;
+        }
+
+        &:hover {
+            background-color: rgba(18, 18, 18, 1);
+            cursor: pointer;
+
+            .slider-right-icon {
+                fill: rgba(0, 255, 0, 1);
+            }
+        }
+    }
+}
