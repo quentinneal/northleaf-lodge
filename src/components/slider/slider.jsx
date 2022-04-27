@@ -1,4 +1,4 @@
-import { useState, useLayoutEffect } from "react";
+import { useState } from "react";
 
 import './slider.scss';
 
@@ -17,17 +17,7 @@ const Slider = () => {
     const [sliderNumber, setSliderNumber] = useState(0);
     const [sliderList, setSliderData] = useState(sliderData);
 
-    useLayoutEffect(() => {
-        const lastSliderNumber = sliderData.length - 1;
-
-            if (sliderNumber < 0) {
-                setSliderNumber(lastSliderNumber)
-            }
-            if (sliderNumber > lastSliderNumber){
-                setSliderNumber(0)
-            }
-
-    }, [sliderNumber])
+    const lastSliderNumber = sliderList.length - 1;
 
     return (
         <Div100vh className="slider">
@@ -35,8 +25,16 @@ const Slider = () => {
                 <Slide key={slide.id} slide={slide} sliderPosition={sliderPosition} sliderNumber={sliderNumber}/>
             ))}
             <div className="slider-arrows">
-                <button className='slider-left-arrow' onClick={() => setSliderNumber(prevIndex => prevIndex - 1)}><LeftIcon className="slider-left-icon"/></button>
-                <button className='slider-right-arrow' onClick={() => setSliderNumber(prevIndex => prevIndex + 1)}><RightIcon className="slider-right-icon"/></button>
+                <button 
+                    className='slider-left-arrow' 
+                    onClick={() => setSliderNumber(prevSliderNumber => prevSliderNumber === 0 ? lastSliderNumber : prevSliderNumber - 1)}>
+                        <LeftIcon className="slider-left-icon"/>
+                </button>
+                <button 
+                    className='slider-right-arrow' 
+                    onClick={() => setSliderNumber(prevSliderNumber => prevSliderNumber === lastSliderNumber ? 0 : prevSliderNumber + 1)}>
+                        <RightIcon className="slider-right-icon"/>
+                </button>
             </div>
         </Div100vh>
     );

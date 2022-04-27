@@ -1,6 +1,8 @@
 .banner {
     overflow: hidden;
     display: grid;
+    position: relative;
+    z-index: 2;
 
     .banner-background-image {
         background-image: url(../../assets/bannerimage.jpg);

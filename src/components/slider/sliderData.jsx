@@ -1,7 +1,15 @@
+// TODO: Find a more efficient way to import data
+// TODO: Remember to reduce image quality to improve slider speed
+
+import sliderImage1 from '../../assets/imageone.jpg';
+import sliderImage2 from '../../assets/imagetwo.jpg';
+import sliderImage3 from '../../assets/imagethree.jpg';
+import sliderImage4 from '../../assets/imagefour.jpg';
+import sliderImage5 from '../../assets/imagefive.jpg';
 
 export const sliderData = [{
     id: 'slider1',
-    image: 'sliderImage1',
+    image: sliderImage1,
     title: 'Natural Rooms',
     description: 'High quality, nature themed room varieties.',
     buttonLink: '/search',
@@ -9,7 +17,7 @@ export const sliderData = [{
 },
 {
     id: 'slider2',
-    image: 'sliderImage2',
+    image: sliderImage2,
     title: 'Spacious Restaurant',
     description: 'Eat food inspired by the northwest.',
     buttonLink: '/restaurant',
@@ -17,7 +25,7 @@ export const sliderData = [{
 },
 {
     id: 'slider3',
-    image: 'sliderImage3',
+    image: sliderImage3,
     title: 'Professional Gym',
     description: 'Modern machines and weights for your fitness goals.',
     buttonLink: '/gym',
@@ -25,7 +33,7 @@ export const sliderData = [{
 },
 {
     id: 'slider4',
-    image: 'sliderImage4',
+    image: sliderImage4,
     title: 'Warm Pool',
     description: 'Large pool with heater.',
     buttonLink: '/pool',
@@ -33,7 +41,7 @@ export const sliderData = [{
 },
 {
     id: 'slider5',
-    image: 'sliderImage5',
+    image: sliderImage5,
     title: 'Elegant Ballroom',
     description: 'Large ballroom for your events.',
     buttonLink: '/ballroom',
