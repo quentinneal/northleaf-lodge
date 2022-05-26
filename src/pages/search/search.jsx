@@ -1,106 +1,104 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
 import './search.scss';
 
 import { roomsData } from './roomsData';
+
 import Filters from '../../components/filters/filters';
 import Rooms from '../../components/rooms/rooms';
 
 const Search = () => {
 
-    const filterData = [
-        {property: 'bedType', value: ''},
-        {property: 'persons', value: ''},
-        {property: 'wifi', value: false},
-        {property: 'breakfast', value: false}
-    ];
+    const filterData = {
+        bedType: '',
+        persons: '',
+        wifi: false,
+        breakfast: false,
+    };
 
-    const [rooms, setRooms] = useState(roomsData.sort((a, b) => a.price - b.price));
-    const [roomsCopy, setRoomsCopy] = useState(roomsData);
+    const [rooms, setRooms] = useState(roomsData);
+    const [roomsDisplay, setRoomsDisplay] = useState(roomsData);
     const [filters, setFilters] = useState(filterData);
     const [priceSort, setPriceSort] = useState('ascending');
 
-    const filterRooms = () => {
-        const trueFilters = filters.filter(filter => filter.value);
-        let filteredRooms = rooms
-            filteredRooms = roomsCopy.filter(room => {
-            return trueFilters.every(filter => {
-                return filter.value === room[filter.property]
-            })
-        })
-        handleSort(priceSort, filteredRooms)
-    }
-
-    const handleSort = (priceSortState, modifiedRooms) => {
-        switch (priceSortState) {
+    const handleSort = (priceSort, filteredRooms) => {
+        switch (priceSort) {
             case 'ascending':
-                modifiedRooms.sort((a, b) => a.price - b.price);
-                setRooms(modifiedRooms);
+                filteredRooms.sort((a, b) => a.price - b.price);
+                setRoomsDisplay(filteredRooms);
                 break;
             case 'descending':
-                modifiedRooms.sort((a, b) => b.price - a.price);
-                setRooms(modifiedRooms);
+                filteredRooms.sort((a, b) => b.price - a.price);
+                setRoomsDisplay(filteredRooms);
                 break;
             default:
-                setRooms(modifiedRooms);
+                setRoomsDisplay(filteredRooms);
                 break;
         }
     }
 
-    const handleRoomType = (e) => {
-        const roomTypeChange = [...filters];
-        roomTypeChange[0].value = e.target.value;
-        setFilters(roomTypeChange);
-        filterRooms();
+    // Dynamic filtering of rooms
+    useEffect(() => {
 
+            const trueFilters = {};
+
+            // Collect true attributes from filters state object and add to trueFilters object
+            Object.keys(filters).forEach(key => {
+                if (filters[key]) {
+                    trueFilters[key] = filters[key];
+                } 
+            })
+
+            // Only display rooms where every truefilter attribute matches contents of any room attributes
+            let filteredRooms = [...rooms]
+            filteredRooms = rooms.filter(room => {
+                return Object.keys(trueFilters).every(property => {
+                    return trueFilters[property] === room[property]
+                })
+            })
+
+            // Sort filtered rooms based on priceSort state and set results as roomsDisplay state
+            handleSort(priceSort, filteredRooms)
+            
+
+    }, [filters, rooms, priceSort])
+    
+
+    const handleSelect = (e) => {
+        const { name, value } = e.target
+        setFilters(prevFilters => ({...prevFilters, [name]: value }));
     }
 
-    const handlePersons = (e) => {
-        const personsChange = [...filters];
-        personsChange[1].value = e.target.value;
-        setFilters(personsChange);
-        filterRooms();
-    }
-
-    const handleWifi = (e) => {
-        const wifiChange = [...filters];
-        wifiChange[2].value = e.target.checked;
-        setFilters(wifiChange);
-        filterRooms();
-    }
-
-    const handleBreakfast = (e) => {
-        const breakfastChange = [...filters];
-        breakfastChange[3].value = e.target.checked;
-        setFilters(breakfastChange);
-        filterRooms();
+    const handleCheckbox = (e) => {
+        const { name, checked } = e.target
+        setFilters(prevFilters => ({ ...prevFilters, [name]: checked }));
     }
 
     const handlePriceSort = (e) => {
         const {value} = e.target
         setPriceSort(value)
-        const roomsCopy = [...rooms]
-        handleSort(value, roomsCopy)
+        const roomsDisplay = [...rooms]
+        handleSort(value, roomsDisplay)
     }
 
     const handleReset = () => {
         setFilters(filterData);
-        setRooms(roomsData);  
+        setRoomsDisplay(roomsData);  
         setPriceSort('ascending');
     }
 
     return (
+        
         <div className="search">
             <Filters filters={filters} 
                 priceSort={priceSort} 
-                handleRoomType={handleRoomType} 
-                handlePersons={handlePersons} 
-                handleWifi={handleWifi} 
-                handleBreakfast={handleBreakfast} 
+                handleSelect={handleSelect} 
+                handleCheckbox={handleCheckbox}
                 handlePriceSort={handlePriceSort} 
                 handleSort={handleSort} 
                 handleReset={handleReset}
             />
-            <Rooms rooms={rooms}/>
+            <Rooms roomsDisplay={roomsDisplay}/>
         </div>
     );
 }

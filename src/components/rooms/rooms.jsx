@@ -5,10 +5,11 @@ import { ReactComponent as PersonIcon } from '../../assets/user-solid.svg';
 import { ReactComponent as WifiIcon } from '../../assets/wifi-solid.svg';
 import { ReactComponent as BreakfastIcon } from '../../assets/mug-saucer-solid.svg';
 
-function Rooms({rooms}) {
+function Rooms({roomsDisplay}) {
+    
     return (
         <div className="rooms">
-            {rooms.map(({ id, name, price, image, persons, bedType, bedNumber, wifi, breakfast, description }, i) => (
+            {roomsDisplay.map(({ id, name, price, image, persons, bedType, bedNumber, wifi, breakfast, description }, i) => (
 
                 <div key={id} className="rooms-element">
                     <div className="rooms-image-container">

@@ -2,10 +2,10 @@
 // TODO: Remember to reduce image quality to improve slider speed
 
 import sliderImage1 from '../../assets/imageone.jpg';
-import sliderImage2 from '../../assets/imagetwo.jpg';
-import sliderImage3 from '../../assets/imagethree.jpg';
-import sliderImage4 from '../../assets/imagefour.jpg';
-import sliderImage5 from '../../assets/imagefive.jpg';
+import sliderImage2 from '../../assets/lycsarchitectureH77w4l3UWy4unsplash.jpg';
+import sliderImage3 from '../../assets/svenmiekeMsCgmHuirDounsplash.jpg';
+import sliderImage4 from '../../assets/brettjordan7aygbuJpgxEunsplash(2).jpg';
+import sliderImage5 from '../../assets/brettjordan7aygbuJpgxEunsplash(1).jpg';
 
 export const sliderData = [{
     id: 'slider1',

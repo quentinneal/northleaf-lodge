@@ -1,5 +1,3 @@
-import React from 'react';
-
 import './about.scss';
 
 import aboutImage from '../../assets/aboutimage.jpg';
@@ -32,7 +30,7 @@ const About = () => {
                         dream of the mind's eye the sky calls to us.</p>
                 </div>
             </div>
-            <img className="about-image" src={aboutImage} alt="Mt Si Summit" />
+            <img className="about-image" src={aboutImage} alt="Buck Lake, Mt Hood National Forest, USA" />
         </div>
     );
 }

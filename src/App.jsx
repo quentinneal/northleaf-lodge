@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import './App.scss';
 
@@ -8,6 +8,8 @@ import Search from './pages/search/search';
 import Checkout from './pages/checkout/checkout';
 
 function App() {
+
+  const [checkout, setCheckout] = useState([]);
 
   const { pathname } = useLocation();
 

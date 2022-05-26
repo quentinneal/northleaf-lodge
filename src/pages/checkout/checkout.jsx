@@ -1,9 +1,6 @@
-import React from 'react';
-
 import './checkout.scss';
 
 import Room1 from '../../assets/imageone.jpg';
-
 import Room2 from '../../assets/DSC00885.jpg'
 
 import { ReactComponent as BedIcon } from '../../assets/bed-solid.svg';
@@ -14,6 +11,7 @@ import { ReactComponent as BreakfastIcon } from '../../assets/mug-saucer-solid.s
 import { Link } from 'react-router-dom';
 
 function Rooms() {
+
     return (
         <div className="checkout">
             <div className="summary">
