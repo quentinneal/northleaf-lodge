@@ -1,15 +1,18 @@
 import React, { useState, useLayoutEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
-import './App.scss';
 
 import Home from './pages/home/home';
 import Header from './components/header/header';
 import Search from './pages/search/search';
+import Restaurant from './pages/restaurant/restaurant';
+import Gym from './pages/gym/gym';
+import Pool from './pages/pool/pool';
+import Ballroom from './pages/ballroom/ballroom';
 import Checkout from './pages/checkout/checkout';
 
-function App() {
+import './App.scss';
 
-  const [checkout, setCheckout] = useState([]);
+function App() {
 
   const { pathname } = useLocation();
 
@@ -23,8 +26,11 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='search' element={<Search />} />
+        <Route path='restaurant' element={<Restaurant />} />
+        <Route path='gym' element={<Gym />} />
+        <Route path='pool' element={<Pool />} />
+        <Route path='ballroom' element={<Ballroom />} />
         <Route path='checkout' element={<Checkout />} />
-        <Route path='checkout/complete' element={<Search />} />
       </Routes>
     </div>
   );

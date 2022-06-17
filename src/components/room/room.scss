@@ -1,0 +1,76 @@
+.room-element {
+    margin: 3rem 3rem 0;
+    background-color: rgba(237, 237, 237, 1);
+    display: flex;
+
+    .room-image-container {
+        width: 50%;
+        aspect-ratio: 16 / 9;
+        padding: 3rem;
+    }
+
+    .room-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: right;
+    }
+
+    .room-info {
+        width: 50%;
+        padding: 3rem 3rem 3rem 0;
+
+    }
+
+    .room-heading {
+        display: flex;
+    }
+
+    .room-title {}
+
+    .room-title-text {
+        font-size: 2.7rem;
+        font-weight: 500;
+        color: rgba(18, 18, 18, 1);
+    }
+
+    .room-price {}
+
+    .room-price-text {
+        font-size: 2.7rem;
+        font-weight: 500;
+        margin-left: 3rem;
+        color: rgba(18, 18, 18, 1);
+    }
+
+    .room-details {
+        display: flex;
+        list-style-type: none;
+        margin-top: 1.2rem;
+        color: rgba(18, 18, 18, 1);
+
+        li {
+            margin-right: 3rem;
+            display: flex;
+            align-items: center;
+
+            svg {
+                height: 1.8rem;
+                margin-right: 1.5rem;
+            }
+
+            span {
+                font-size: 1.5rem;
+                font-weight: 500;
+            }
+        }
+
+    }
+
+    .room-description {
+        margin-top: 1.2rem;
+        font-size: 1.5rem;
+        font-weight: 300;
+        line-height: 1.8;
+    }
+}

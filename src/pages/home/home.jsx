@@ -1,16 +1,16 @@
 import React from 'react';
 
-import Banner from '../../components/banner/banner';
+import HeroImage from '../../components/heroImage/heroImage';
 import About from '../../components/about/about';
 import Slider from '../../components/slider/slider';
 
 function Home() {
     return (
-        <div className="home">
-            <Banner></Banner>
+        <main className="home">
+            <HeroImage></HeroImage>
             <About></About>
             <Slider></Slider>
-        </div>
+        </main>
     );
 }
 

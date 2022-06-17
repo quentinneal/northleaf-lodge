@@ -1,11 +1,15 @@
+import { Link } from 'react-router-dom';
+
 import './buttonDark.scss';
 
-const ButtonDarkTheme = ({ children }) => {
+const ButtonDarkTheme = ({ children, link }) => {
 
     return (
-        <button className="buttonDark">
-            <span className="buttonDark-text">{children}</span>
-        </button>
+        <Link className="button-dark-link" to={link}>
+            <button className="button-dark">
+                <span className="button-dark-text">{children}</span>
+            </button>
+        </Link>
     );
 }
 

@@ -1,13 +1,16 @@
-import './about.scss';
+import './pool.scss';
 
-import Description from '../description/description'
+import Banner from '../../components/banner/banner'
 
-import image from '../../assets/aboutimage.jpg';
+import Description from '../../components/description/description'
 
-const About = () => {
+import image from '../../assets/brettjordan7aygbuJpgxEunsplash(2).jpg';
+
+const Pool = () => {
 
     return (
-        <section className="about-container">
+        <section className="poolContainer">
+            <Banner title='Warm Pool' description='Large pool with heater.' image={image}/>
             <Description image={image}>
                     <p>Hydrogen atoms inconspicuous motes of rock and gas shores of the cosmic ocean star stuff harvesting star
                         light colonies the only home we've ever known? Kindling the energy hidden in matter cosmic ocean Tunguska event
@@ -33,4 +36,4 @@ const About = () => {
     );
 }
 
-export default About;
+export default Pool;

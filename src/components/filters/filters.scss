@@ -1,0 +1,75 @@
+.filters {
+    background-color: rgba(237, 237, 237, 1);
+    align-self: start;
+    position: sticky;
+    top: 7.8rem
+}
+
+.filter-element {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 3rem 3rem 0;
+}
+
+.filter-label {
+    color: rgba(18, 18, 18, 1);
+    margin-bottom: .6rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.filter-input {
+    //all: unset;
+    padding: .7rem;
+    width: 100%;
+    background-color: rgba(216, 216, 216, 1);
+    border-radius: 1.8rem;
+    border: .1rem solid rgba(216, 216, 216, 1);
+}
+
+.filter-range-input {
+    width: 100%;
+}
+
+.filter-checkbox-input {
+    display: none;
+
+    &:checked {
+
+        &+::before {
+            background-color: rgba(18, 18, 18, 1);
+        }
+    }
+}
+
+.filter-checkbox-text {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: rgba(18, 18, 18, 1);
+
+    &::before {
+        content: "";
+        display: inline-block;
+        vertical-align: bottom;
+        width: 3rem;
+        height: 3rem;
+        margin-right: 1.5rem;
+        background-color: rgba(237, 237, 237, 1);
+        border-radius: 1.8rem;
+        border: .1rem solid rgba(204, 204, 204, 1);
+    }
+}
+
+.filter-reset {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    background-color: rgba(18, 18, 18, 1);
+    border-radius: 3.6rem;
+    padding: 1.8rem 1.8rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: rgba(237, 237, 237, 1);
+}

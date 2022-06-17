@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 
-import './search.scss';
-
 import { roomsData } from './roomsData';
 
 import Filters from '../../components/filters/filters';
 import Rooms from '../../components/rooms/rooms';
+
+import './search.scss';
 
 const Search = () => {
 
@@ -77,8 +77,6 @@ const Search = () => {
     const handlePriceSort = (e) => {
         const {value} = e.target
         setPriceSort(value)
-        const roomsDisplay = [...rooms]
-        handleSort(value, roomsDisplay)
     }
 
     const handleReset = () => {
@@ -89,7 +87,7 @@ const Search = () => {
 
     return (
         
-        <div className="search">
+        <main className="search">
             <Filters filters={filters} 
                 priceSort={priceSort} 
                 handleSelect={handleSelect} 
@@ -99,7 +97,7 @@ const Search = () => {
                 handleReset={handleReset}
             />
             <Rooms roomsDisplay={roomsDisplay}/>
-        </div>
+        </main>
     );
 }
 

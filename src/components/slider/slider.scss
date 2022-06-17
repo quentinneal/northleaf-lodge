@@ -1,12 +1,8 @@
 .slider {
-    overflow: hidden;
     display: grid;
     position: relative;
-    width: 100%; //500%
-    overflow-x: hidden;
-    background-color: black;
 
-    .slider-arrows {
+    .banner-arrows {
         display: flex;
         position: absolute;
         bottom: 24rem;
@@ -14,7 +10,7 @@
         z-index: 1;
     }
 
-    .slider-left-arrow {
+    .banner-left-arrow {
         all: unset;
         aspect-ratio: 1 / 1;
         width: 7.2rem;
@@ -24,7 +20,7 @@
         background-color: rgba(0, 255, 0, 1);
         transition: background-color .2s ease;
 
-        .slider-left-icon {
+        .banner-left-icon {
             width: 1.8rem;
             fill: rgba(18, 18, 18, 1);
             transition: fill .2s ease;
@@ -34,13 +30,13 @@
             background-color: rgba(18, 18, 18, 1);
             cursor: pointer;
 
-            .slider-left-icon {
+            .banner-left-icon {
                 fill: rgba(0, 255, 0, 1);
             }
         }
     }
 
-    .slider-right-arrow {
+    .banner-right-arrow {
         all: unset;
         aspect-ratio: 1 / 1;
         width: 7.2rem;
@@ -50,7 +46,7 @@
         background-color: rgba(0, 255, 0, 1);
         transition: background-color .2s ease;
 
-        .slider-right-icon {
+        .banner-right-icon {
             width: 1.8rem;
             fill: rgba(18, 18, 18, 1);
             transition: fill .2s ease;
@@ -60,7 +56,7 @@
             background-color: rgba(18, 18, 18, 1);
             cursor: pointer;
 
-            .slider-right-icon {
+            .banner-right-icon {
                 fill: rgba(0, 255, 0, 1);
             }
         }
