@@ -1,15 +1,14 @@
 import './restaurant.scss';
 
-import Banner from '../../components/banner/banner'
-
-import Description from '../../components/description/description'
-
 import image from '../../assets/lycsarchitectureH77w4l3UWy4unsplash.jpg';
+
+import Banner from '../../components/banner/banner'
+import Description from '../../components/description/description'
 
 const Restaurant = () => {
 
     return (
-        <section className="restaurantContainer">
+        <section className="restaurant-container">
             <Banner title='Spacious Restaurant' description='Eat food inspired by the northwest.' image={image}/>
             <Description image={image}>
                 <p>Hydrogen atoms inconspicuous motes of rock and gas shores of the cosmic ocean star stuff harvesting star

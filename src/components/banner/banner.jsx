@@ -1,11 +1,9 @@
-import Div100vh from 'react-div-100vh';
-
 import './banner.scss';
 
-const Banner = ({ title, description, image, button }) => {
+const Banner = ({ title, description, image, button, arrows }) => {
 
     return (
-        <Div100vh className="banner-container">
+        <div className="banner-container">
             <img className={`banner-image`} src={image} alt='placeholder text' loading='eager' />
             <div className="banner-content">
                 <div className="banner-heading">
@@ -13,8 +11,9 @@ const Banner = ({ title, description, image, button }) => {
                     <div className="banner-description"><span className="banner-description-text">{description}</span></div>
                 </div>
                 {button}
+                {arrows}
             </div>
-        </Div100vh>
+        </div>
     );
 }
 

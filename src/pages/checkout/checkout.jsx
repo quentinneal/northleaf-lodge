@@ -1,6 +1,6 @@
-import './checkout.scss';
-
 import { useSelector } from "react-redux"
+
+import './checkout.scss';
 
 import Summary from '../../components/summary/summary';
 import CheckoutRooms from  '../../components/checkoutRooms/checkoutRooms'
@@ -11,8 +11,8 @@ const Checkout = () => {
 
     return (
         <main className="checkout">
-            <Summary checkout={checkout}/>
             <CheckoutRooms checkout={checkout}/>
+            <Summary checkout={checkout}/>
         </main>
     );
 }

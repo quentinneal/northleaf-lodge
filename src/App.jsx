@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect } from 'react';
+import React, { useLayoutEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 
 import Home from './pages/home/home';
@@ -14,6 +14,8 @@ import './App.scss';
 
 function App() {
 
+  const location = useLocation();
+
   const { pathname } = useLocation();
 
   useLayoutEffect(() => {
@@ -21,7 +23,7 @@ function App() {
   }, [pathname]);
 
   return (
-    <div className="App">
+    <div className={`App ${(location.pathname === '/search' || location.pathname === '/checkout') && 'sticky-container'} `}>
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />

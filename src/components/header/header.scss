@@ -1,10 +1,9 @@
 .header {
-    height: 7.8rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    top: 0;
     position: fixed;
+    top: 0;
     z-index: 3;
     width: 100%;
     background-color: rgba(18, 18, 18, 1);
@@ -16,14 +15,16 @@
     }
 
     .header-logo {
+        padding: 0.61111111111111114em 0.8333333333em; // 2.2rem 3rem ems are based on elements font size (less media queries)
         display: flex;
-        margin: 0 3rem;
+        font-size: 3.6rem;
+        line-height: 1; // Remove excessive height from text.
         text-decoration: none;
     }
 
     .header-logo-text {
         color: rgba(0, 255, 0, 1);
-        font-size: 3rem;
+
 
         &::first-letter {
             color: rgba(237, 237, 237, 1);
@@ -32,17 +33,21 @@
 
     .header-logo-text-leaf {
         width: 1.8rem;
+        aspect-ratio: 1 / 2; // fixes safari bug that causes unusual header height
         fill: rgba(0, 255, 0, 1);
-        transform: translate(-0.9rem, -1.6rem)
+        transform: translate(-1.1rem, -1.9rem)
     }
 
     .header-button {
+        font-weight: 500;
+        font-size: 1.6rem;
+        margin: 0 1.875em; //3rem
+        padding: 0.6875em 1.4999999999999997em; // 1.1rem 2.4rem
+        border-radius: 3em;
         text-decoration: none;
         display: block;
-        margin: 0 3rem;
         border: 1px solid rgba(0, 255, 0, 1);
-        border-radius: 3.6rem;
-        padding: 0.9rem 1.8rem;
+        color: rgba(237, 237, 237, 1);
         transition: background-color .2s ease;
 
         &:hover {
@@ -57,8 +62,6 @@
 
     .header-button-text {
         transition: color .2s ease;
-        font-size: 1.3rem;
-        font-weight: 500;
-        color: rgba(237, 237, 237, 1);
+
     }
 }

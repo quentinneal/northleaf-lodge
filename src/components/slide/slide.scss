@@ -1,5 +1,8 @@
 .slide {
     grid-area: 1/-1;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
 }
 
 .activeSlider {

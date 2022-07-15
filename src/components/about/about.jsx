@@ -1,8 +1,8 @@
 import './about.scss';
 
-import Description from '../description/description'
-
 import image from '../../assets/aboutimage.jpg';
+
+import Description from '../description/description'
 
 const About = () => {
 

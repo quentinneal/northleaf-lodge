@@ -1,7 +1,5 @@
 import './room.scss';
 
-import { Link } from 'react-router-dom';
-
 import { ReactComponent as BedIcon } from '../../assets/bed-solid.svg';
 import { ReactComponent as PersonIcon } from '../../assets/user-solid.svg';
 import { ReactComponent as WifiIcon } from '../../assets/wifi-solid.svg';

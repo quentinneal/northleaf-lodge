@@ -1,3 +1,7 @@
+/* Notes
+
+Use 16 or and its divisible numbers when possible for website dimensions
+
 /* CSS Reset */
 *,
 *::after,
@@ -30,13 +34,27 @@ input[type="search"]::-webkit-search-results-decoration {
 
 html {
     font-size: 62.5%;
+    height: 100%;
 }
 
 body {
     box-sizing: border-box;
+    font-size: 1.6rem;
+    height: 100%;
 }
 
-.App {}
+#root {
+    height: 100%;
+}
+
+.App {
+    height: 100%;
+}
+
+.sticky-container {
+    height: auto;
+    min-height: 100%;
+}
 
 input,
 select {
@@ -55,6 +73,7 @@ img {
 }
 
 button {
+    font-family: 'Poppins';
     background-color: transparent;
 }
 

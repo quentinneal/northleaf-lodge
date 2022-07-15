@@ -1,15 +1,14 @@
 import './ballroom.scss';
 
-import Banner from '../../components/banner/banner'
-
-import Description from '../../components/description/description'
-
 import image from '../../assets/brettjordan7aygbuJpgxEunsplash(1).jpg';
+
+import Banner from '../../components/banner/banner'
+import Description from '../../components/description/description'
 
 const Ballroom = () => {
 
     return (
-        <section className="ballroomContainer">
+        <section className="ballroom-container">
             <Banner title='Elegant Ballroom' description='Large ballroom for your events.' image={image}/>
             <Description image={image}>
                     <p>Hydrogen atoms inconspicuous motes of rock and gas shores of the cosmic ocean star stuff harvesting star

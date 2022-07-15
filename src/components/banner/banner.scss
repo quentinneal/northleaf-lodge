@@ -1,27 +1,45 @@
 .banner-container {
     display: grid;
-    overflow: hidden;
+    height: 100%;
 
     .banner-image {
-        width: 100%;
-        height: 100%;
         object-fit: cover;
         position: fixed;
-        bottom: 0;
+        width: 100%;
+        height: 100vh;
+        inset: 0;
+        overflow: hidden;
+
     }
 
     .banner-content {
+        padding: 4rem 2rem;
         position: relative;
         z-index: 2;
+        text-align: center;
         width: 100%;
-        height: 24rem;
         background-color: rgba(18, 18, 18, .9);
-        align-self: end;
         display: flex;
-        justify-content: space-between;
+        align-self: end;
+        flex-direction: column;
         align-items: center;
         color: rgba(237, 237, 237, 1);
         transition: background-color .2s ease;
+
+        @media only screen and (min-width: 720px) {
+            text-align: left;
+            padding: 6rem 4rem;
+            justify-content: space-between;
+            flex-direction: row;
+        }
+
+        @media only screen and (min-width: 1120px) {
+            padding: 7rem 5rem;
+        }
+
+        @media only screen and (min-width: 1520px) {
+            padding: 8rem 6rem;
+        }
 
         &:hover {
             background-color: rgba(18, 18, 18, 1);
@@ -33,27 +51,99 @@
         grid-area: 1/-1;
     }
 
-    .banner-heading {
-        margin: 0 6rem;
-    }
-
-    .banner-title-text {
-        font-size: 4.8rem;
+    .banner-title {
+        font-size: 3.2rem;
         font-weight: 500;
+
+
+        @media only screen and (min-width: 720px) {
+            font-size: 3.7rem;
+        }
+
+        @media only screen and (min-width: 1120px) {
+            font-size: 4.2rem;
+        }
+
+        @media only screen and (min-width: 1520px) {
+            font-size: 4.8rem;
+        }
+
     }
 
-    .banner-description-text {
-        font-size: 1.8rem;
+    .banner-description {
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
         font-weight: 300;
+
+        @media only screen and (min-width: 720px) {
+            font-size: 1.6rem;
+            margin-bottom: 0rem;
+        }
+
+        @media only screen and (min-width: 1120px) {
+            font-size: 1.7rem;
+        }
+
+        @media only screen and (min-width: 1520px) {
+            font-size: 1.8rem;
+        }
+
+
     }
 
-    /*.banner-title-text-green {
-        color: rgba(0, 255, 0, 1);
+    .banner-arrows {
+        display: flex;
+        position: absolute;
+        top: -7.2rem;
+        right: 0%;
+        z-index: 1;
     }
-    
-    .banner-title-text-leaf {
-        width: 2.4rem;
-        fill: rgba(0, 255, 0, 1);
-        transform: translate(-25.1rem, -2.8rem)
-    }*/
+
+    .banner-left-arrow {
+        all: unset;
+        aspect-ratio: 1 / 1;
+        width: 7.2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 255, 0, 1);
+
+        .banner-left-icon {
+            width: 1.8rem;
+            fill: rgba(18, 18, 18, 1);
+        }
+
+        &:hover {
+            background-color: rgba(18, 18, 18, 1);
+            cursor: pointer;
+
+            .banner-left-icon {
+                fill: rgba(0, 255, 0, 1);
+            }
+        }
+    }
+
+    .banner-right-arrow {
+        all: unset;
+        aspect-ratio: 1 / 1;
+        width: 7.2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 255, 0, 1);
+
+        .banner-right-icon {
+            width: 1.8rem;
+            fill: rgba(18, 18, 18, 1);
+        }
+
+        &:hover {
+            background-color: rgba(18, 18, 18, 1);
+            cursor: pointer;
+
+            .banner-right-icon {
+                fill: rgba(0, 255, 0, 1);
+            }
+        }
+    }
 }

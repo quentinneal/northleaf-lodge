@@ -1,14 +1,9 @@
 import { useState, useEffect } from "react";
 
-import { sliderData } from './sliderData';
-
-import Slide from '../slide/slide';
-
-import { ReactComponent as LeftIcon } from '../../assets/chevron-left-solid.svg';
-import { ReactComponent as RightIcon } from '../../assets/chevron-right-solid.svg';
-
 import './slider.scss';
 
+import { sliderData } from './sliderData';
+import Slide from '../slide/slide';
 
 const Slider = () => {
 
@@ -23,6 +18,7 @@ const Slider = () => {
         setArrowDisable(true);
         setAutoplay(false);
         setSliderNumber(prevSliderNumber => prevSliderNumber === 0 ? lastSliderNumber : prevSliderNumber - 1);
+        
     }
 
     const sliderIncrement = () => {
@@ -43,22 +39,17 @@ const Slider = () => {
     return (
         <section className="slider">
                 {sliderList.map((slide, sliderPosition) => (
-                    <Slide key={slide.id} slide={slide} sliderPosition={sliderPosition} sliderNumber={sliderNumber} setArrowDisable={setArrowDisable}/>
+                    <Slide key={slide.id} 
+                    slide={slide} 
+                    sliderPosition={sliderPosition} 
+                    sliderNumber={sliderNumber} 
+                    setArrowDisable={setArrowDisable}
+                    arrowDisable={arrowDisable}
+                    sliderDecrement={sliderDecrement}
+                    sliderIncrement={sliderIncrement}
+
+                    />
                 ))}
-                <div className="banner-arrows">
-                    <button 
-                        className='banner-left-arrow'
-                        disabled={arrowDisable}
-                        onClick={sliderDecrement}>
-                            <LeftIcon className="banner-left-icon"/>
-                    </button>
-                    <button 
-                        className='banner-right-arrow' 
-                        disabled={arrowDisable}
-                        onClick={sliderIncrement}>
-                            <RightIcon className="banner-right-icon"/>
-                    </button>
-                </div>
         </section>
     );
 }

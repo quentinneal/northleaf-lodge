@@ -1,15 +1,14 @@
 import './gym.scss';
 
-import Banner from '../../components/banner/banner'
-
-import Description from '../../components/description/description'
-
 import image from '../../assets/svenmiekeMsCgmHuirDounsplash.jpg';
+
+import Banner from '../../components/banner/banner'
+import Description from '../../components/description/description'
 
 const Gym = () => {
 
     return (
-        <section className="gymContainer">
+        <section className="gym-container">
             <Banner title='Professional Gym' description='Modern machines and weights for your fitness goals.' image={image}/>
             <Description image={image}>
                     <p>Hydrogen atoms inconspicuous motes of rock and gas shores of the cosmic ocean star stuff harvesting star

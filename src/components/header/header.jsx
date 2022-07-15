@@ -1,7 +1,8 @@
-import { ReactComponent as LeafIcon } from '../../assets/leaf-solid.svg';
 import { Link, useLocation } from 'react-router-dom';
 
 import './header.scss';
+
+import { ReactComponent as LeafIcon } from '../../assets/leaf-solid.svg';
 
 const Header = () => {
 
