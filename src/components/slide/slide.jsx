@@ -1,9 +1,9 @@
 import './slide.scss';
 
-import { ReactComponent as LeftIcon } from '../../assets/chevron-left-solid.svg';
-import { ReactComponent as RightIcon } from '../../assets/chevron-right-solid.svg';
+import { ReactComponent as LeftIcon } from '../../assets/icons/chevron-left-solid.svg';
+import { ReactComponent as RightIcon } from '../../assets/icons/chevron-right-solid.svg';
 import Banner from '../banner/banner'
-import ButtonDark from '../buttonDark/buttonDark';
+import ButtonBanner from '../buttonBanner/buttonBanner';
 
 const Slide = ({slide, sliderPosition, sliderNumber, setArrowDisable, arrowDisable, sliderDecrement, sliderIncrement}) => {
 
@@ -17,7 +17,7 @@ const Slide = ({slide, sliderPosition, sliderNumber, setArrowDisable, arrowDisab
             title={slide.title}
             description={slide.description}
             image={slide.image} 
-            button={<ButtonDark link={slide.buttonLink}>{slide.buttonText}</ButtonDark>}
+            button={<ButtonBanner link={slide.buttonLink}>{slide.buttonText}</ButtonBanner>}
             arrows={<div className="banner-arrows">
                     <button 
                         className='banner-left-arrow'

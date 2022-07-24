@@ -1,6 +1,6 @@
 import './about.scss';
 
-import image from '../../assets/aboutimage.jpg';
+import aboutImages from '../../data/aboutImages'
 
 import Description from '../description/description'
 
@@ -8,7 +8,7 @@ const About = () => {
 
     return (
         <section className="about-container">
-            <Description image={image}>
+            <Description image={aboutImages}>
                     <p>Hydrogen atoms inconspicuous motes of rock and gas shores of the cosmic ocean star stuff harvesting star
                         light colonies the only home we've ever known? Kindling the energy hidden in matter cosmic ocean Tunguska event
                         encyclopaedia galactica take root and flourish another world. Network of wormholes dispassionate extraterrestrial

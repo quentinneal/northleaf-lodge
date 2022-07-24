@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import './slider.scss';
 
-import { sliderData } from './sliderData';
+import { sliderData } from '../../data/sliderData';
 import Slide from '../slide/slide';
 
 const Slider = () => {
@@ -18,7 +18,6 @@ const Slider = () => {
         setArrowDisable(true);
         setAutoplay(false);
         setSliderNumber(prevSliderNumber => prevSliderNumber === 0 ? lastSliderNumber : prevSliderNumber - 1);
-        
     }
 
     const sliderIncrement = () => {

@@ -1,7 +1,7 @@
 import './heroImage.scss';
 
 import Banner from '../banner/banner'
-import ButtonDark from '../buttonDark/buttonDark';
+import ButtonBanner from '../buttonBanner/buttonBanner';
 
 const HeroImage = () => {
 
@@ -10,7 +10,7 @@ const HeroImage = () => {
             <Banner title='NorthLeaf Lodge' 
             description='A hotel booking website demo project.' 
             image='/'
-            button={<ButtonDark link='/search'>Book Now</ButtonDark>}/>
+            button={<ButtonBanner link='/search'>Book Now</ButtonBanner>}/>
         </div>
     );
 }

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import './search.scss';
 
-import { roomsData } from './roomsData';
+import { roomsData } from '../../data/roomsData';
 
 import Filters from '../../components/filters/filters';
 import Rooms from '../../components/rooms/rooms';

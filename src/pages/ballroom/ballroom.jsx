@@ -1,6 +1,7 @@
 import './ballroom.scss';
 
-import image from '../../assets/brettjordan7aygbuJpgxEunsplash(1).jpg';
+//import image from '../../assets/brettjordan7aygbuJpgxEunsplash(1).jpg';
+import ballroomImages from '../../data/ballroomImages'
 
 import Banner from '../../components/banner/banner'
 import Description from '../../components/description/description'
@@ -9,8 +10,8 @@ const Ballroom = () => {
 
     return (
         <section className="ballroom-container">
-            <Banner title='Elegant Ballroom' description='Large ballroom for your events.' image={image}/>
-            <Description image={image}>
+            <Banner title='Elegant Ballroom' description='Large ballroom for your events.' image={ballroomImages}/>
+            <Description image={ballroomImages}>
                     <p>Hydrogen atoms inconspicuous motes of rock and gas shores of the cosmic ocean star stuff harvesting star
                         light colonies the only home we've ever known? Kindling the energy hidden in matter cosmic ocean Tunguska event
                         encyclopaedia galactica take root and flourish another world. Network of wormholes dispassionate extraterrestrial

@@ -1,9 +1,9 @@
 import './room.scss';
 
-import { ReactComponent as BedIcon } from '../../assets/bed-solid.svg';
-import { ReactComponent as PersonIcon } from '../../assets/user-solid.svg';
-import { ReactComponent as WifiIcon } from '../../assets/wifi-solid.svg';
-import { ReactComponent as BreakfastIcon } from '../../assets/mug-saucer-solid.svg';
+import { ReactComponent as BedIcon } from '../../assets/icons/bed-solid.svg';
+import { ReactComponent as PersonIcon } from '../../assets/icons/user-solid.svg';
+import { ReactComponent as WifiIcon } from '../../assets/icons/wifi-solid.svg';
+import { ReactComponent as BreakfastIcon } from '../../assets/icons/mug-saucer-solid.svg';
 
 const Room = ({room, button}) => {
     

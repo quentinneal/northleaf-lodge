@@ -1,6 +1,6 @@
 import './restaurant.scss';
 
-import image from '../../assets/lycsarchitectureH77w4l3UWy4unsplash.jpg';
+import restaurantImages from '../../data/restaurantImages'
 
 import Banner from '../../components/banner/banner'
 import Description from '../../components/description/description'
@@ -9,8 +9,8 @@ const Restaurant = () => {
 
     return (
         <section className="restaurant-container">
-            <Banner title='Spacious Restaurant' description='Eat food inspired by the northwest.' image={image}/>
-            <Description image={image}>
+            <Banner title='Spacious Restaurant' description='Eat food inspired by the northwest.' image={restaurantImages}/>
+            <Description image={restaurantImages}>
                 <p>Hydrogen atoms inconspicuous motes of rock and gas shores of the cosmic ocean star stuff harvesting star
                     light colonies the only home we've ever known? Kindling the energy hidden in matter cosmic ocean Tunguska event
                     encyclopaedia galactica take root and flourish another world. Network of wormholes dispassionate extraterrestrial
