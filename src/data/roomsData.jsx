@@ -4,7 +4,7 @@ import roomImages from './roomImages'
 
 export const roomsData = [{
     id: 'room1',
-    name: 'Garden Room',
+    name: 'Room 1',
     price: 102,
     image: roomImages.imageOne,
     bedType: 'queen',
@@ -18,7 +18,7 @@ export const roomsData = [{
 },
 {
     id: 'room2',
-    name: 'View Room',
+    name: 'Room 2',
     price: 82,
     image: roomImages.imageTwo,
     bedType: 'queen',
@@ -32,7 +32,7 @@ export const roomsData = [{
 },
 {
     id: 'room3',
-    name: 'View Room',
+    name: 'Room 3',
     price: 181,
     image: roomImages.imageThree,
     bedType: 'king',
@@ -46,7 +46,7 @@ export const roomsData = [{
 },
 {
     id: 'room4',
-    name: 'View Room',
+    name: 'Room 4',
     price: 54,
     image: roomImages.imageFour,
     bedType: 'king',
@@ -60,7 +60,7 @@ export const roomsData = [{
 },
 {
     id: 'room5',
-    name: 'View Room',
+    name: 'Room 5',
     price: 159,
     image: roomImages.imageFive,
     bedType: 'queen',
@@ -74,7 +74,7 @@ export const roomsData = [{
 },
 {
     id: 'room6',
-    name: 'View Room',
+    name: 'Room 6',
     price: 191,
     image: roomImages.imageSix,
     bedType: 'king',
@@ -88,7 +88,7 @@ export const roomsData = [{
 },
 {
     id: 'room7',
-    name: 'View Room',
+    name: 'Room 7',
     price: 54,
     image: roomImages.imageSeven,
     bedType: 'king',
@@ -102,7 +102,7 @@ export const roomsData = [{
 },
 {
     id: 'room8',
-    name: 'View Room',
+    name: 'Room 8',
     price: 68,
     image: roomImages.imageEight,
     bedType: 'queen',
@@ -116,7 +116,7 @@ export const roomsData = [{
 },
 {
     id: 'room9',
-    name: 'View Room',
+    name: 'Room 9',
     price: 54,
     image: roomImages.imageNine,
     bedType: 'queen',
@@ -130,7 +130,7 @@ export const roomsData = [{
 },
 {
     id: 'room10',
-    name: 'View Room',
+    name: 'Room 10',
     price: 55,
     image: roomImages.imageTen,
     bedType: 'queen',
@@ -144,7 +144,7 @@ export const roomsData = [{
 },
 {
     id: 'room11',
-    name: 'View Room',
+    name: 'Room 11',
     price: 85,
     image: roomImages.imageEleven,
     bedType: 'king',
