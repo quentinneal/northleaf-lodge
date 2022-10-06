@@ -1,6 +1,6 @@
 # NorthLeaf Lodge
 
-A full stack hotel booking application.
+A hotel booking application. Contains a slider, room filters and a checkout section.
 
 [Demo](https://northleaf-lodge-live-quentin.herokuapp.com/)
 
