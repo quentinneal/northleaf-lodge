@@ -1,10 +1,23 @@
-import { Link } from 'react-router-dom';
-
-import StripeCheckoutButton from '../stripe-button/stripe-button'
+import StripeButton from '../stripe-button/stripe-button'
 
 import './summary.scss';
 
-const Summary = ({checkout}) => {
+type CheckoutTypes = {
+    checkout: {
+    id: string,
+    name: string,
+    price: number,
+    image: string,
+    bedType: string,
+    persons: string,
+    wifi: boolean,
+    breakfast: boolean,
+    bedNumber: number,
+    description: string,
+    }[]
+}
+
+const Summary = ({checkout}: CheckoutTypes) => {
 
     const totalPrice = checkout.reduce(function (acc, obj) { return acc + obj.price; }, 0);
 
@@ -16,8 +29,7 @@ const Summary = ({checkout}) => {
                 <div className="summary-total-title"><span className="summary-total-title-text">Total:</span></div>
                 <div className="summary-total-price"><span className="summary-total-price-text">&#36;{totalPrice}</span></div>
             </div>
-            <StripeCheckoutButton className="summary-submit" totalPrice={totalPrice} />
-            {/*<Link className="summary-submit" to="/checkoutComplete"><span className="summary-submit-text">Pay Now</span></Link>*/}
+            <StripeButton totalPrice={totalPrice} />
             </div>
             <div className="summary-description">
                 <p>Please use test credit card below for payments*</p>

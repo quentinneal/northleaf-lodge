@@ -1,6 +1,24 @@
 import './description.scss';
 
-const Description = ({children, image}) => {
+type DescriptionProps = {
+    image: {
+    image320: string,
+    image640: string,
+    image960: string,
+    image1280: string,
+    image1600: string,
+    image1920: string,
+    image2240: string,
+    image2560: string,
+    image2880: string,
+    image3200: string,
+    image3520: string,
+    image3840: string,
+    },
+    children: JSX.Element[],
+}
+
+const Description = ({children, image}: DescriptionProps) => {
 
     return (
         <section className="description-container">

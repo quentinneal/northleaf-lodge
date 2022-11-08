@@ -1,6 +1,27 @@
 import './banner.scss';
 
-const Banner = ({ title, description, image, button, arrows }) => {
+type BannerProps = {
+    title: string,
+    description: string,
+    image: {
+    image320: string,
+    image640: string,
+    image960: string,
+    image1280: string,
+    image1600: string,
+    image1920: string,
+    image2240: string,
+    image2560: string,
+    image2880: string,
+    image3200: string,
+    image3520: string,
+    image3840: string,
+    },
+    button: React.ReactNode,
+    arrows: React.ReactNode
+}
+
+const Banner = ({ title, description, image, button, arrows }: BannerProps) => {
 
     return (
         <div className="banner-container">

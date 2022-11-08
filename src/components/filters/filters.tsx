@@ -1,6 +1,22 @@
 import './filters.scss';
 
-function Filters({ filters, priceSort, handleSelect, handleCheckbox, handlePriceSort, handleReset}) {
+type FiltersProps = {
+    filters: {
+        bedType: string,
+        persons: string,
+        wifi: boolean,
+        breakfast: boolean,
+    }
+    priceSort: string,
+    handleSelect: (e: React.ChangeEvent<HTMLSelectElement>) => void,
+    handleCheckbox: (e: React.ChangeEvent<HTMLInputElement>) => void,
+    handlePriceSort: (e: React.ChangeEvent<HTMLSelectElement>) => void,
+    handleReset: () => void,
+
+
+}
+
+function Filters({ filters, priceSort, handleSelect, handleCheckbox, handlePriceSort, handleReset}: FiltersProps) {
     
     return (
         <div className="filters">

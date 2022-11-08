@@ -1,16 +1,16 @@
-import './gym.scss';
+import './pool.scss';
 
-import gymImages from '../../data/gymImages'
+import poolImages from '../../data/poolImages'
 
 import Banner from '../../components/banner/banner'
 import Description from '../../components/description/description'
 
-const Gym = () => {
+const Pool = () => {
 
     return (
-        <section className="gym-container">
-            <Banner title='Professional Gym' description='Modern machines and weights for your fitness goals.' image={gymImages}/>
-            <Description image={gymImages}>
+        <section className="pool-container">
+            <Banner title='Warm Pool' description='Large pool with heater.' image={poolImages} button={null} arrows={null}/>
+            <Description image={poolImages}>
                     <p>Hydrogen atoms inconspicuous motes of rock and gas shores of the cosmic ocean star stuff harvesting star
                         light colonies the only home we've ever known? Kindling the energy hidden in matter cosmic ocean Tunguska event
                         encyclopaedia galactica take root and flourish another world. Network of wormholes dispassionate extraterrestrial
@@ -35,4 +35,4 @@ const Gym = () => {
     );
 }
 
-export default Gym;
+export default Pool;

@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux"
+import { RootState } from '../../app/store'
 
 import './checkout.scss';
 
@@ -7,7 +8,7 @@ import CheckoutRooms from  '../../components/checkoutRooms/checkoutRooms'
 
 const Checkout = () => {
 
-    const { checkout } = useSelector((state) => state.checkout);
+    const { checkout } = useSelector((state: RootState) => state.checkout);
 
     return (
         <main className="checkout">

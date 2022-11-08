@@ -2,7 +2,12 @@ import { Link } from 'react-router-dom';
 
 import './buttonBanner.scss';
 
-const ButtonBanner = ({ children, link }) => {
+type ButtonBannerProps = {
+    children: string,
+    link: string,
+}
+
+const ButtonBanner = ({ children, link }: ButtonBannerProps) => {
 
     return (
         <Link className="button-dark-link" to={link}>

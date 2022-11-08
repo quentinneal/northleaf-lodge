@@ -1,6 +1,5 @@
 import './ballroom.scss';
 
-//import image from '../../assets/brettjordan7aygbuJpgxEunsplash(1).jpg';
 import ballroomImages from '../../data/ballroomImages'
 
 import Banner from '../../components/banner/banner'
@@ -10,14 +9,13 @@ const Ballroom = () => {
 
     return (
         <section className="ballroom-container">
-            <Banner title='Elegant Ballroom' description='Large ballroom for your events.' image={ballroomImages}/>
+            <Banner title='Elegant Ballroom' description='Large ballroom for your events.' image={ballroomImages} button={null} arrows={null}/>
             <Description image={ballroomImages}>
                     <p>Hydrogen atoms inconspicuous motes of rock and gas shores of the cosmic ocean star stuff harvesting star
                         light colonies the only home we've ever known? Kindling the energy hidden in matter cosmic ocean Tunguska event
                         encyclopaedia galactica take root and flourish another world. Network of wormholes dispassionate extraterrestrial
                         observer how far away brain is the seed of intelligence extraplanetary paroxysm of global death? Paroxysm of
                         global death Euclid paroxysm of global death from which we spring vanquish the impossible extraplanetary?</p>
-
                     <p>Light years paroxysm of global death emerged into consciousness as a patch of light finite but unbounded of brilliant
                         syntheses? A still more glorious dawn awaits hundreds of thousands brain is the seed of intelligence
                         dispassionate extraterrestrial observer at the edge of forever kindling the energy hidden in matter. Made

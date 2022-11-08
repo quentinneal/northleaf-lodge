@@ -5,7 +5,23 @@ import { ReactComponent as PersonIcon } from '../../assets/icons/user-solid.svg'
 import { ReactComponent as WifiIcon } from '../../assets/icons/wifi-solid.svg';
 import { ReactComponent as BreakfastIcon } from '../../assets/icons/mug-saucer-solid.svg';
 
-const Room = ({room, button}) => {
+type RoomTypes = {
+    room: {
+    id: string,
+    name: string,
+    price: number,
+    image: string,
+    bedType: string,
+    persons: string,
+    wifi: boolean,
+    breakfast: boolean,
+    bedNumber: number,
+    description: string,
+    }
+    button?: JSX.Element,
+}
+
+const Room = ({room, button}: RoomTypes) => {
     
     const { name, price, image, persons, bedType, bedNumber, wifi, breakfast, description } = room;
     return (

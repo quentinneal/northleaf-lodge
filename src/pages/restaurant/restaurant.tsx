@@ -9,7 +9,7 @@ const Restaurant = () => {
 
     return (
         <section className="restaurant-container">
-            <Banner title='Spacious Restaurant' description='Eat food inspired by the northwest.' image={restaurantImages}/>
+            <Banner title='Spacious Restaurant' description='Eat food inspired by the northwest.' image={restaurantImages} button={null} arrows={null}/>
             <Description image={restaurantImages}>
                 <p>Hydrogen atoms inconspicuous motes of rock and gas shores of the cosmic ocean star stuff harvesting star
                     light colonies the only home we've ever known? Kindling the energy hidden in matter cosmic ocean Tunguska event

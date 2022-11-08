@@ -1,7 +1,6 @@
-import React from 'react';
 import StripeCheckout from 'react-stripe-checkout';
 
-const StripeCheckoutButton = ({ totalPrice }) => {
+const StripeButton = ({totalPrice}) => {
     const priceInCents = totalPrice * 100;
     const key = 'pk_test_51HSDBNF9tDvUZwSBXWgYw49NHuxvCdCJrkiFYd0s2Aj8k3M3nIYmFgQlRJ8yKgun0YSWhbnRi2bq4c8Tf4jn6jM000iwBCyekc';
 
@@ -9,6 +8,7 @@ const StripeCheckoutButton = ({ totalPrice }) => {
         alert('Payment accepted!');
     };
 
+    console.log(totalPrice)
     return (
         <StripeCheckout
             label='Pay Now'
@@ -22,7 +22,7 @@ const StripeCheckoutButton = ({ totalPrice }) => {
             token={onToken}
             stripeKey={key}>
             <button className="summary-submit">
-                <span class="summary-submit-text">Pay Now</span>
+                <span className="summary-submit-text">Pay Now</span>
             </button>
 
         </StripeCheckout>
@@ -30,4 +30,4 @@ const StripeCheckoutButton = ({ totalPrice }) => {
     )
 }
 
-export default StripeCheckoutButton;
+export default StripeButton;

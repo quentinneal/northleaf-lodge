@@ -2,10 +2,10 @@
 // TODO: Remember to reduce image quality to improve slider speed
 
 import bedroomImages from './bedroomImages'
-import restaurantImages from './restaurantImages.js'
-import gymImages from './gymImages.js'
-import poolImages from './poolImages.js'
-import ballroomImages from './ballroomImages.js'
+import restaurantImages from './restaurantImages'
+import gymImages from './gymImages'
+import poolImages from './poolImages'
+import ballroomImages from './ballroomImages'
 
 export const sliderData = [{
     id: 'slider1',

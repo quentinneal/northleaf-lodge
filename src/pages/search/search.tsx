@@ -21,31 +21,15 @@ const Search = () => {
     const [filters, setFilters] = useState(filterData);
     const [priceSort, setPriceSort] = useState('ascending');
 
-    const handleSort = (priceSort, filteredRooms) => {
-        switch (priceSort) {
-            case 'ascending':
-                filteredRooms.sort((a, b) => a.price - b.price);
-                setRoomsDisplay(filteredRooms);
-                break;
-            case 'descending':
-                filteredRooms.sort((a, b) => b.price - a.price);
-                setRoomsDisplay(filteredRooms);
-                break;
-            default:
-                setRoomsDisplay(filteredRooms);
-                break;
-        }
-    }
-
     // Dynamic filtering of rooms
     useEffect(() => {
 
-            const trueFilters = {};
+            const trueFilters: Record<string, string | boolean> = {} ;
 
             // Collect true attributes from filters state object and add to trueFilters object
             Object.keys(filters).forEach(key => {
-                if (filters[key]) {
-                    trueFilters[key] = filters[key];
+                if (filters[key as keyof typeof filters]) {
+                    trueFilters[key] = filters[key as keyof typeof filters];
                 } 
             })
 
@@ -53,28 +37,40 @@ const Search = () => {
             let filteredRooms = [...rooms]
             filteredRooms = rooms.filter(room => {
                 return Object.keys(trueFilters).every(property => {
-                    return trueFilters[property] === room[property]
+                    return trueFilters[property as keyof typeof trueFilters] === room[property as keyof typeof room]
                 })
             })
 
             // Sort filtered rooms based on priceSort state and set results as roomsDisplay state
-            handleSort(priceSort, filteredRooms)
+            switch (priceSort) {
+                case 'ascending':
+                    filteredRooms.sort((a, b) => a.price - b.price);
+                    setRoomsDisplay(filteredRooms);
+                    break;
+                case 'descending':
+                    filteredRooms.sort((a, b) => b.price - a.price);
+                    setRoomsDisplay(filteredRooms);
+                    break;
+                default:
+                    setRoomsDisplay(filteredRooms);
+                    break;
+            }
             
 
     }, [filters, rooms, priceSort])
     
 
-    const handleSelect = (e) => {
+    const handleSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const { name, value } = e.target
         setFilters(prevFilters => ({...prevFilters, [name]: value }));
     }
 
-    const handleCheckbox = (e) => {
+    const handleCheckbox = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, checked } = e.target
         setFilters(prevFilters => ({ ...prevFilters, [name]: checked }));
     }
 
-    const handlePriceSort = (e) => {
+    const handlePriceSort = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const {value} = e.target
         setPriceSort(value)
     }
@@ -93,7 +89,6 @@ const Search = () => {
                 handleSelect={handleSelect} 
                 handleCheckbox={handleCheckbox}
                 handlePriceSort={handlePriceSort} 
-                handleSort={handleSort} 
                 handleReset={handleReset}
             />
             <Rooms roomsDisplay={roomsDisplay}/>
