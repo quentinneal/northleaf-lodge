@@ -7,7 +7,7 @@ import Slide from '../slide/slide';
 
 const Slider = () => {
 
-    const [sliderList, setSliderData] = useState(sliderData); // List of slider images and data
+    const [sliderList, setSliderList] = useState(sliderData); // List of slider images and data
     const [sliderNumber, setSliderNumber] = useState(0); // Number used to trigger which slide I want to show
     const [autoplay, setAutoplay] = useState(true); // Used to control if automatic slider is incremented every 3 seconds
 

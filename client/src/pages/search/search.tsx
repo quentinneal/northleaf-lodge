@@ -2,28 +2,28 @@ import { useState, useEffect } from "react";
 
 import './search.scss';
 
-import { roomsData } from '../../data/roomsData';
-
 import Filters from '../../components/filters/filters';
 import Rooms from '../../components/rooms/rooms';
 
 const Search = () => {
 
     const filterData = {
-        bedType: '',
+        bedtype: '',
         persons: '',
         wifi: false,
         breakfast: false,
     };
 
-    const [rooms, setRooms] = useState(roomsData);
-    const [roomsDisplay, setRoomsDisplay] = useState(roomsData);
+    const [roomsDisplay, setRoomsDisplay] = useState([]);
     const [filters, setFilters] = useState(filterData);
     const [priceSort, setPriceSort] = useState('ascending');
 
     // Dynamic filtering of rooms
     useEffect(() => {
 
+        (async () => {
+            try {
+                
             const trueFilters: Record<string, string | boolean> = {} ;
 
             // Collect true attributes from filters state object and add to trueFilters object
@@ -34,8 +34,9 @@ const Search = () => {
             })
 
             // Only display rooms where every truefilter attribute matches contents of any room attributes
-            let filteredRooms = [...rooms]
-            filteredRooms = rooms.filter(room => {
+            let fetchedRooms = await fetch(`/rooms_list`);
+            let roomsList = await fetchedRooms.json();
+            roomsList = roomsList.filter((room: any) => {
                 return Object.keys(trueFilters).every(property => {
                     return trueFilters[property as keyof typeof trueFilters] === room[property as keyof typeof room]
                 })
@@ -44,20 +45,28 @@ const Search = () => {
             // Sort filtered rooms based on priceSort state and set results as roomsDisplay state
             switch (priceSort) {
                 case 'ascending':
-                    filteredRooms.sort((a, b) => a.price - b.price);
-                    setRoomsDisplay(filteredRooms);
+                    roomsList.sort((a: any, b: any) => a.price - b.price);
+                    setRoomsDisplay(roomsList);
                     break;
                 case 'descending':
-                    filteredRooms.sort((a, b) => b.price - a.price);
-                    setRoomsDisplay(filteredRooms);
+                    roomsList.sort((a: any, b: any) => b.price - a.price);
+                    setRoomsDisplay(roomsList);
                     break;
                 default:
-                    setRoomsDisplay(filteredRooms);
+                    setRoomsDisplay(roomsList);
                     break;
             }
+
+            console.log(roomsList);
+            console.log(trueFilters);
+
+        } catch(error) {
+            console.log('Server not available');
+        }
+      })();
             
 
-    }, [filters, rooms, priceSort])
+    }, [filters, priceSort])
     
 
     const handleSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -77,7 +86,7 @@ const Search = () => {
 
     const handleReset = () => {
         setFilters(filterData);
-        setRoomsDisplay(roomsData);  
+        setRoomsDisplay(roomsDisplay);  
         setPriceSort('ascending');
     }
 

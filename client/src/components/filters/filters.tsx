@@ -2,7 +2,7 @@ import './filters.scss';
 
 type FiltersProps = {
     filters: {
-        bedType: string,
+        bedtype: string,
         persons: string,
         wifi: boolean,
         breakfast: boolean,
@@ -21,8 +21,8 @@ function Filters({ filters, priceSort, handleSelect, handleCheckbox, handlePrice
     return (
         <div className="filters">
                 <div className="filter-element">
-                    <label className="filter-label" htmlFor="bedType">Room Type</label>
-                    <select className="filter-input" id="bedType" name="bedType" value={filters.bedType} onChange={(e) => handleSelect(e)}>
+                    <label className="filter-label" htmlFor="bedtype">Room Type</label>
+                    <select className="filter-input" id="bedtype" name="bedtype" value={filters.bedtype} onChange={(e) => handleSelect(e)}>
                         <option value="">Select Type</option>
                         <option value="king">King</option>
                         <option value="queen">Queen</option>

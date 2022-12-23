@@ -11,11 +11,11 @@ type RoomTypes = {
     name: string,
     price: number,
     image: string,
-    bedType: string,
+    bedtype: string,
     persons: string,
     wifi: boolean,
     breakfast: boolean,
-    bedNumber: number,
+    bednumber: number,
     description: string,
     }
     button?: JSX.Element,
@@ -23,7 +23,7 @@ type RoomTypes = {
 
 const Room = ({room, button}: RoomTypes) => {
     
-    const { name, price, image, persons, bedType, bedNumber, wifi, breakfast, description } = room;
+    const { name, price, image, persons, bedtype, bednumber, wifi, breakfast, description } = room;
     return (
         <div className="room-element">
             <div className="room-image-container">
@@ -31,11 +31,11 @@ const Room = ({room, button}: RoomTypes) => {
             </div>
             <div className="room-info">
                 <div className="room-heading">
-                    <div className="room-title"><span className="room-title-text">{name}</span></div>
+                    <div className="room-title"><span className="room-title-text">{name.charAt(0).toUpperCase() + name.slice(1)}</span></div>
                     <div className="room-price"><span className="room-price-text">&#36;{price}</span></div>
                 </div>
                 <ul className="room-details">
-                    <li><BedIcon className="leaf" /><span>{bedNumber} {bedType.charAt(0).toUpperCase() + bedType.slice(1)} {`${bedNumber > 1 ? 'Beds' : 'Bed'}`}</span></li>
+                    <li><BedIcon className="leaf" /><span>{bednumber} {bedtype.charAt(0).toUpperCase() + bedtype.slice(1)} {`${bednumber > 1 ? 'Beds' : 'Bed'}`}</span></li>
                     <li><PersonIcon className="leaf" /><span>{persons} Persons</span></li>
                     {wifi &&
                         <li><WifiIcon className="leaf" /><span>Wifi</span></li>

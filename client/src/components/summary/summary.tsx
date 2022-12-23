@@ -19,7 +19,7 @@ type CheckoutTypes = {
 
 const Summary = ({checkout}: CheckoutTypes) => {
 
-    const totalPrice = checkout.reduce(function (acc, obj) { return acc + obj.price; }, 0);
+    const totalPrice = checkout.reduce(function (acc, obj) { return acc + Number(obj.price); }, 0);
 
     return (
         

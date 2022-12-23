@@ -13,11 +13,11 @@ type RoomsDisplayTypes = {
     name: string,
     price: number,
     image: string,
-    bedType: string,
+    bedtype: string,
     persons: string,
     wifi: boolean,
     breakfast: boolean,
-    bedNumber: number,
+    bednumber: number,
     description: string,
     }[]
 }
