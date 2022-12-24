@@ -12,7 +12,10 @@ const devConfig = {
 //const devConfig = `postgresql://${process.env.USER}:${process.env.PASSWORD}@${process.env.HOST}:${process.env.PORT}/${process.env.DATABASE}`
 
 const proConfig = {
-  connectionString: process.env.DATABASE_URL
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
 };
 
 const pool = new Pool(process.env.NODE_ENV === "production" ? proConfig : devConfig);
