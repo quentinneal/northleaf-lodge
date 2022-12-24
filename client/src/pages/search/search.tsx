@@ -17,9 +17,11 @@ const Search = () => {
     const [roomsDisplay, setRoomsDisplay] = useState([]);
     const [filters, setFilters] = useState(filterData);
     const [priceSort, setPriceSort] = useState('ascending');
+    const [loading, setLoading] = useState(true);
 
     // Dynamic filtering of rooms
     useEffect(() => {
+        setLoading(true);
 
         (async () => {
             try {
@@ -59,6 +61,7 @@ const Search = () => {
 
             console.log(roomsList);
             console.log(trueFilters);
+            setLoading(false);
 
         } catch(error) {
             console.log('Server not available');
@@ -100,7 +103,10 @@ const Search = () => {
                 handlePriceSort={handlePriceSort} 
                 handleReset={handleReset}
             />
-            <Rooms roomsDisplay={roomsDisplay}/>
+            {loading ?
+                <div>Loading...</div>
+            :
+                <Rooms roomsDisplay={roomsDisplay}/>}
         </main>
     );
 }
