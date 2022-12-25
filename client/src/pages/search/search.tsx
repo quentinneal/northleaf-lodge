@@ -59,8 +59,6 @@ const Search = () => {
                     break;
             }
 
-            console.log(roomsList);
-            console.log(trueFilters);
             setLoading(false);
 
         } catch(error) {
